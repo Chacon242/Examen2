@@ -35,7 +35,7 @@ class Salida extends Model
             ->decrement('cupos_disponibles', $cantidad);
 
         if ($actualizadas === 0) {
-            throw new CuposInsuficientesException("La salida {$this->id} no tiene cupos suficientes.");
+            throw new CuposInsuficientesException("No hay cupos suficientes para la salida {$this->id} ");
         }
 
         $this->refresh();
